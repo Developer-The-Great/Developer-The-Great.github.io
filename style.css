@@ -13,9 +13,9 @@
     background-position: center;
     
     
-    height: 70vh;
+    height: 50vh;
 
-    box-sizing: border-box;
+    box-sizing:content-box;
     padding-left: 50px;
     padding-top: 50px;
     
@@ -51,7 +51,7 @@
     background-color:#292929;
     padding-left: 20px;
     padding-top: 20px;
-    height: 30vh;
+    height: auto;
     box-sizing: border-box;
     font-family: 'Poppin',sans-serif;
     color:floralwhite;
@@ -62,28 +62,14 @@
     border-right: 5px dashed #f2f2f2;
 }
 
-.GraphicsProgramming
-{
-    background-color:#292929;
-    padding-left: 20px;
-    padding-top: 20px;
-    height: 30vh;
-    box-sizing: border-box;
-    font-family: 'Poppin',sans-serif;
-    color:floralwhite;
-    text-align: center;
-    
-    border-bottom: 5px dashed #f2f2f2;
-    border-left: 5px dashed #f2f2f2;
-    border-right: 5px dashed #f2f2f2;
-}
+
 
 .PhysicsProgramming
 {
     background-color:#292929;
     padding-left: 20px;
     padding-top: 20px;
-    height: 30vh;
+    height: auto;
     box-sizing: border-box;
     font-family: 'Poppin',sans-serif;
     color:floralwhite;
@@ -99,7 +85,7 @@
     background-color:#292929;
     padding-left: 20px;
     padding-top: 20px;
-    height: 30vh;
+    height: auto;
     box-sizing: border-box;
     font-family: 'Poppin',sans-serif;
     color:floralwhite;
@@ -115,7 +101,7 @@
     background-color:#292929;
     padding-left: 20px;
     padding-top: 20px;
-    height: 30vh;
+    height: auto;
     box-sizing: border-box;
     font-family: 'Poppin',sans-serif;
     color:floralwhite;
@@ -131,7 +117,7 @@
     background-color:#292929;
     padding-left: 20px;
     padding-top: 20px;
-    height: 30vh;
+    height: auto;
     box-sizing: border-box;
     font-family: 'Poppin',sans-serif;
     color:floralwhite;
@@ -142,7 +128,29 @@
     border-right: 5px dashed #f2f2f2;
 }
 
+.flexGameEngineDevelopment
+{
+    display: flex;
+    
+}
 
+.flexPhysicsProgramming
+{
+    display:  flex;
+
+}
+
+div
+{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+#hidden
+{
+    color:#292929;
+}
 
 
 
