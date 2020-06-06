@@ -80,7 +80,7 @@
     border-right: 5px dashed #f2f2f2;
 }
 
-.UnityGames
+.Games
 {
     background-color:#292929;
     padding-left: 20px;
@@ -128,17 +128,15 @@
     border-right: 5px dashed #f2f2f2;
 }
 
-.flexGameEngineDevelopment
+.flex
 {
     display: flex;
-    
-}
-
-.flexPhysicsProgramming
-{
-    display:  flex;
+    flex-wrap: wrap;
+    align-content: space-between;
 
 }
+
+
 
 div
 {
