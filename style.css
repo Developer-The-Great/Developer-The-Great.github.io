@@ -149,6 +149,12 @@ div
 {
     color:#292929;
 }
+#frameImage
+{
+    padding: 5px;
+        border: 8px solid #999999;
+        background-color: #e6e6e6;
+}
 
 
 
