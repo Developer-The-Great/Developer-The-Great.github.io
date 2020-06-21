@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title id = "title">PX2D</title>
+    <link rel="stylesheet" href="PX2D.css" />
+    
+    
+    </head>
+    <header class="Front">
+
+			<h1>PX2D</h1>
+
+
+	</header>
+    <body class = "bodyClass">
+        <header class="Contents">
+            
+            <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/yNK7cbZxGJU">
+            </iframe>
+            
+            <p>PX2D is a 2D physics engine developed under the GXP engine, which is a 2D game engine developed by Saxion University of Applied Sciences. This was my first dive into game physics and at the moment of writing, my first ‘full’ physics engine. This personal project took me 1 month to develop </p>
+            
+            <h3 class = "Subtitle">Collision Detection and Resolution </h3>
+         
+            <p>Using the separating axis theorem, PX2D can detect collisions between convex polygons and circles. After detecting the collision. It will also generate a manifold containing the required information to resolve the collision such as contact points, the collision normal, depth penetration.</p>
+            <br>
+            <p>One notable feature of the manifold generation is the finding of contact points. I did this by using the Sutherland–Hodgman algorithm to get the clipping polygon created by the 2 polygons that are colliding. Using the clipping polygon, I then select the vertices of said clipping polygon that are on the one of the edges of one of the colliding polygons.</p>
+            <br>
+            <p>Using the information from the given manifold, I then use it to resolve the collision.</p>
+
+        
+    </header>
+    
+    </body>
+    
+    
+
+</html>
