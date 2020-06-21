@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Poppin');
+
+
+*
+{
+    margin: 0;
+}
+
+.bodyClass
+{
+     background-color:#292929;
+            padding-left: 15%;
+    padding-right: 15%;
+}
+
+.Front
+{
+    
+    background-image: url(../Developer-The-Great.github.io/img/front.png) ;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+    height: 20vh;
+
+    box-sizing:content-box;
+    padding-left: 50px;
+    padding-top: 50px;
+    
+    text-align: center;
+    color:floralwhite;
+    font-family: 'Poppin',sans-serif;
+}
+
+
+
+.Front h1
+{
+    font-size: 50px;
+    
+}
+
+.Contents
+{
+    background-color:#292929;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    box-sizing: border-box;
+    font-family: 'Poppin',sans-serif;
+    color:floralwhite;
+    text-align: justify;
+    
+    border-top: 5px dashed #f2f2f2;
+    border-bottom: 5px dashed #f2f2f2;
+    border-left: 5px dashed #f2f2f2;
+    border-right: 5px dashed #f2f2f2;
+}
+
+.Subtitle
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

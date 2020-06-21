@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title id = "title">Dynamic Mesh Slicing</title>
+    <link rel="stylesheet" href="MeshSlicing.css" />
+    
+    
+    </head>
+    <header class="Front">
+
+			<h1>Dynamic Mesh Slicing</h1>
+
+
+	</header>
+    <body class = "bodyClass">
+        <header class="Contents">
+            <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/5ah0xlLjIFQ">
+            </iframe>
+            
+            <p>Dynamic mesh splitting is a feature I have taken an interest to for quite some time. Because of this, I decided that I would like to create a completely custom mesh slicing algorithm from scratch (with the help of the Unity Engine). This project took 1 month to develop.</p>
+            
+            <h3 class = "Subtitle"> Mesh Splitting</h3>
+            
+            <p>Given a mesh and a cutting plane (that has a position and normal) the algorithm is able to split the mesh into 2. The video above also shows that the UVs of the mesh are preserved even after cutting. It also shows, the algorithm also is able to then generate the hole that would have been created after slicing the mesh. </p>
+            
+            <h3 class = "Subtitle"> Using Quads as a Base for Slicing</h3>
+            
+            <p>One thing I tried to experiment with is the idea of using quads as a base for slicing rather than triangles. Slicing with triangles, although does work, will create many degenerate triangles after a few cuts. In order to combat this, I tried to group the triangles into quads before slicing them. Although this optimization does work on procedural meshes (cubes, spheres, cylinders, etc), it does not seem to be reliable to be used for meshes that are modeled by artists. </p>
+
+        
+    </header>
+    
+    </body>
+    
+    
+
+</html>
