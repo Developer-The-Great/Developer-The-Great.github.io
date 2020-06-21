@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title id = "title">Collision Detection </title>
+    <link rel="stylesheet" href="CollisionDetection.css" />
+    
+    
+    </head>
+    <header class="Front">
+
+			<h1>3D Collision Detection Optimization and Implementation</h1>
+
+
+	</header>
+    <body class = "bodyClass">
+        <header class="Contents">
+            
+            <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/Pllcm_wbcxY">
+            </iframe>
+            
+            <p>In order to increase my familiarity with game physics, I decided to implement and optimize a collision detection system. This project was implemented under PXG3D, a custom game engine I made. The project took 3 weeks to develop and has the following features:</p>
+            
+            <h3 class = "Subtitle"> 1. Collision Detection Implementation</h3>
+            
+            <p>Any GameObject can have a ‘PhysicsComponent’ where a Collider can be assigned to. Given 2 convex colliders, PXG3D can detect if they are overlapping using the seperating axis test.</p>
+            
+            <h3 class = "Subtitle"> 2. Collision Detection Optimizations</h3>
+            
+            <p>In order to optimize this process, I decided to implement an optimization that were mention in this GDC talk. </p>
+            <br>
+            <p>The first optimization relates to optimizing the checking of face normals for a separating axis, which allows you to only need to go through the faces of one polyhedron instead of both of them. Because of this, in the case where both polyhedrons have the same amount of faces, the optimization would make the process twice as fast. </p>
+            <br>
+            <p>The second optimization relates to optimizing the process checking the edges on one polyhedron and the other polyhedron to find a separating axis. The brute force method of doing this is by checking each edge of one polyhedron with every other edge in the other polyhedron. Instead, this optimization focuses on only checking the edges that can actually create a valid separating axis. </p>
+            
+
+        
+    </header>
+    
+    </body>
+    
+    
+
+</html>

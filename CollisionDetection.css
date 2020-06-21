@@ -16,7 +16,7 @@
 .Front
 {
     
-    background-image: url(../img/front.png) ;
+    background-image: url(../Developer-The-Great.github.io/img/front.png) ;
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -43,11 +43,12 @@
 
 .Contents
 {
-    background-color:#292929;
     padding-left: 5%;
     padding-right: 5%;
+    background-color:#292929;
     padding-top: 20px;
     padding-bottom: 20px;
+
     height: auto;
     box-sizing: border-box;
     font-family: 'Poppin',sans-serif;
