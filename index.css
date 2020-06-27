@@ -5,6 +5,69 @@
 {
     margin: 0;
 }
+a:link
+{
+    text-decoration: none;
+}
+
+.buttons
+{
+    position: absolute;
+    top:30%;
+
+}
+.GithubButton
+{
+
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: black;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+}
+.GithubButton:hover
+{
+    filter: brightness(0.5);
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: black;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+}
+.LinkedInButton
+{
+
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+        padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: #0e76a8;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+}
+.LinkedInButton:hover
+{
+    filter: brightness(0.5);
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+        padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: #0e76a8;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+}
 .Front
 {
     background-image: url(../Developer-The-Great.github.io/img/front.png) ;
