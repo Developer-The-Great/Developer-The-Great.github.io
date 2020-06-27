@@ -5,6 +5,47 @@
 {
     margin: 0;
 }
+a:link
+{
+    text-decoration: none;
+}
+.PXGButtonSpacing
+{
+        padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.PXGButtons
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: black;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.PXGButtons:hover
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: black;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+    text-align: center;
+    filter: brightness(0.5);
+}
 
 .bodyClass
 {
