@@ -6,6 +6,15 @@
     margin: 0;
 }
 
+a:link
+{
+    text-decoration: none;
+}
+.PXGButtonSpacing
+{
+        padding-top: 10px;
+    padding-bottom: 10px;
+}
 .bodyClass
 {
      background-color:#292929;
@@ -31,6 +40,39 @@
     text-align: center;
     color:floralwhite;
     font-family: 'Poppin',sans-serif;
+}
+
+.BackButton
+{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+
+    color:floralwhite;
+    background-color: #292929;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.BackButton:hover
+{
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+
+    color:floralwhite;
+    background-color: #292929;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+    text-align: center;
+    filter: brightness(0.5);
 }
 
 
