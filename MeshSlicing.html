@@ -24,18 +24,19 @@
             </div>
             
             <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/5ah0xlLjIFQ">
+                    src="https://www.youtube.com/embed/Av-N1dw2EIU">
             </iframe>
-            
-            <p>Dynamic mesh splitting is a feature I have taken an interest to for quite some time. Because of this, I decided that I would like to create a completely custom mesh slicing algorithm from scratch (with the help of the Unity Engine). This project took 1 month to develop.</p>
+            <br>
+            <p>Mesh splitting is an important feature in voronoi based destruction systems.In these types of systems, due to the amount of slicing that is done, triangle based mesh slicing is not optimal anymore because it will create many thin and degenerate triangles even after a few slices. This was mentioned in "Real Time Dynamic Fracture with Volumetric Approximate Convex Decompositions" by Mathhias Muller.</p>
             
             <h3 class = "Subtitle"> Mesh Splitting</h3>
             
-            <p>Given a mesh and a cutting plane (that has a position and normal) the algorithm is able to split the mesh into 2. The video above also shows that the UVs of the mesh are preserved even after cutting. It also shows, the algorithm also is able to then generate the hole that would have been created after slicing the mesh. </p>
+            <p>Due to the lack of sources on this subject, the mesh slicing algorithm is completely created from scratch. The idea behind this algorithm is that when we split a polygon, we only split 
+            the edges that are effected by the split. We also reuse the boundary edges of the polygon so that adjacency information does not get deleted. This means that the polygons do not have to be regenerated/reconnected with each other after splitting. </p>
             
-            <h3 class = "Subtitle"> Using Quads as a Base for Slicing</h3>
-            
-            <p>One thing I tried to experiment with is the idea of using quads as a base for slicing rather than triangles. Slicing with triangles, although does work, will create many degenerate triangles after a few cuts. In order to combat this, I tried to group the triangles into quads before slicing them. Although this optimization does work on procedural meshes (cubes, spheres, cylinders, etc), it does not seem to be reliable to be used for meshes that are modeled by artists. </p>
+            <h3 class = "Subtitle"> Island Detection</h3>
+            <p>One important benefit of polygon based mesh splitting is island detection. This means that parts of the mesh that were disjoint due to mesh slicing can be separated into different game
+            objects. This process was shown when the hammer is split. This is possible due to the fact that a Half Edge Data Structure was created around the mesh</p>
 
         
     </header>

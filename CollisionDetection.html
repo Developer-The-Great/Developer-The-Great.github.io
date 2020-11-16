@@ -8,7 +8,7 @@
     </head>
     <header class="Front">
 
-			<h1>3D Collision Detection Optimization and Implementation</h1>
+			<h1>Real-time 3D Physics Engine</h1>
 
 
 	</header>
@@ -24,7 +24,7 @@
             </div>
             
             <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/Pllcm_wbcxY">
+                    src="https://www.youtube.com/embed/uipwkce2W1s">
             </iframe>
             <div class = "PXGButtonSpacing">
                 <a  href="https://github.com/Developer-The-Great/PXG3D">
@@ -33,20 +33,34 @@
                     </div>
                 </a>
             </div>
-            <p>In order to increase my familiarity with game physics, I decided to implement and optimize a collision detection system. This project was implemented under PXG3D, a custom game engine I made. The project took 3 weeks to develop and has the following features:</p>
             
-            <h3 class = "Subtitle"> 1. Collision Detection Implementation</h3>
+            <p>In order to increase my familiarity with game physics, I decided to create a custom 3D physics engine. Here are the following features:</p>
             
-            <p>Any GameObject can have a ‘PhysicsComponent’ where a Collider can be assigned to. Given 2 convex colliders, PXG3D can detect if they are overlapping using the seperating axis test.</p>
+            <h3 class = "Subtitle"> 1. Collision Detection Broadphase:</h3>
             
-            <h3 class = "Subtitle"> 2. Collision Detection Optimizations</h3>
+            <p>In order to be able to insert a larger amount of physics bodies, i needed a broadphase. At the time of doing this part of the engine, I was relatively new to game physics and implementing a GPU broadphase was out of scope. Because of this, I decided to look through the classic CPU sturctures. </p>
             
-            <p>In order to optimize this process, I decided to implement an optimization that were mention in this GDC talk. </p>
+            <p>I realized that each possible broadphase has different use cases and since I did not know what my use case is and all I needed was something that could accelerate my physics engine. In this context, the choice was quite arbitrary. In the end, an octree was used. </p>
+            
+            <h3 class = "Subtitle"> 2. Collision Detection Middlephase and Narrowphase: </h3>
+            
+            <p> After doing research on known collision detection techniques, I was presented with the choice of using either the Gilbert-Johnson-Keerthi or the Seperating Axis Test. The main reason why I ended up choosing SAT is because of sources mentioning it to be more portable to the GPU. Although I did not intend on integrating compute shaders, I wanted to leave the potential to do so open.</p>
             <br>
-            <p>The first optimization relates to optimizing the checking of face normals for a separating axis, which allows you to only need to go through the faces of one polyhedron instead of both of them. Because of this, in the case where both polyhedrons have the same amount of faces, the optimization would make the process twice as fast. </p>
+            <p> Another reason why I chose to use the SAT is because I was made aware of a GDC talk titled  “Physics for Game Programmers:The Separating Axis Test between Convex Polyhedra”. It talks about 
+            how edge checks for the seperating axis test can be optimizied by checking if it creates a valid seperating axis. We are able to tell its valid if the combination of the 2 edges create a minkowski face. An edge check between 2 cube colliders with 24 edges using the brute force method takes on average 0.350 ms. The optimized version only takes 0.058ms on average. The test was done using an Intel Core i7-7700 HQ.</p>
             <br>
-            <p>The second optimization relates to optimizing the process checking the edges on one polyhedron and the other polyhedron to find a separating axis. The brute force method of doing this is by checking each edge of one polyhedron with every other edge in the other polyhedron. Instead, this optimization focuses on only checking the edges that can actually create a valid separating axis. </p>
+            <p> In order to get the contact points of the collision, the Sutherland-Hodgman Mesh Clipping algorithm was used. In my implementation of this algorithm, in order to create numerically robust contacts, the clipping planes are considered to be 'thick' this means that there are cases where the edge being clipped is considered to be on the clipping plane. In this case, the edge is not clipped. </p>
             
+            <h3 class = "Subtitle"> 3. Collision Resolution </h3>
+            
+            <p> For collision resolution, I decided that I would implement sequential impulses with feature-id warm starting. The reason behind choosing this solver is mostly due to the availability of resources for implementation and explanation of this particular collision solver. Another reason is due to the possibility of extending sequential impulses to solve the large mass ratio. In order to test
+            my implementation of sequential impulses with warm starting, I compared it with 2 physics engines: A previous custom physics engine I worked on (where I only used position based warm starting), and the PGS solver implemented in PhysX 3.4.
+            As seen in the video below, the physics engine is able to generate comparable stability when compared with PhysX 3.4. The parameters use to do this comparison are mentioned in the description of the video: </p>
+            <br>
+            
+            <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/Y_TbNf3DF3M">
+            </iframe>
 
         
     </header>

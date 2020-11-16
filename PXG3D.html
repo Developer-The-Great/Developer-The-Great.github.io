@@ -34,9 +34,9 @@
             </div>
             <p>In order to learn more about how game engines work under the hood, and increase my proficiency in C++, I decided to develop a 3D Game Engine with C++ and OpenGL. This project took 1.5 months to develop and has the following features, mentioned below: </p>
             
-            <h3 class = "Subtitle"> 1. Custom collision detection between any convex polyhedra</h3>
+            <h3 class = "Subtitle"> 1. A Custom 3D Physics Engine</h3>
          
-            <p>Using the seperating axis test,  PXG3D is able to detect if 2 objects with a convex collider are overlapping each other. I talk about this feature in detail here. </p>
+            <p>The PXG3D uses a custom physics engine. Broadphase collision detection is done with an octree,  For narrowphase collision detection it uses Seperating Axis Test with optimizations for edge checks. It uses the Sequential Impulse collision solver with feature-id warm starting. More information about this can be found <a href="CollisionDetection.html"> here.</a> </p>
             
             <h3 class = "Subtitle"> 2. Lighting with the Phong Reflection Model</h3>
             
@@ -44,7 +44,9 @@
             
             <h3 class = "Subtitle"> 3. GameObject-Component system for its runtime Game Object model.</h3>
             
-            <p>A GameObject in PXG3D has a list of components. These components would have access to the GameObject its owned by and can modify its properties. Components can be easily added to modify its behaviour. </p>
+            <p></p>
+            
+            <p> A GameObject in PXG3D has a list of components. These components would have access to the GameObject its owned by and can modify its properties. Components can be easily added to modify its behaviour. I considered implementing ECS but i deemed this to be unecessary due to the fact that the target game only has a relatively low number of game Objects (less than 100). This means that the memory efficiency offered by ECS was not necessary. </p>
         
         </header>
     
