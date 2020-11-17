@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppin');
 
-
+main
+{
+    width: 80%;
+    left: 10%;
+    position: relative;
+    margin-top: 75vh;
+    
+}
 *
 {
     margin: 0;
@@ -21,7 +28,9 @@ a.Subtitle:hover
 
 .buttons
 {
-    position: absolute;
+    
+    left:calc(50vw - 130px);
+    position: fixed;
     top:30%;
 
 }
@@ -83,9 +92,10 @@ a.Subtitle:hover
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
-    
-    
-    height: 50vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
 
     box-sizing:content-box;
     padding-left: 50px;
@@ -199,6 +209,24 @@ a.Subtitle:hover
     border-left: 5px dashed #f2f2f2;
     border-right: 5px dashed #f2f2f2;
 }
+
+.InProgress
+{
+    background-color:#292929;
+    padding-left: 20px;
+    padding-top: 20px;
+    height: auto;
+    box-sizing: border-box;
+    font-family: 'Poppin',sans-serif;
+    color:floralwhite;
+    text-align: center;
+    
+    border-bottom: 5px dashed #f2f2f2;
+    border-left: 5px dashed #f2f2f2;
+    border-right: 5px dashed #f2f2f2;
+}
+
+
 .About
 {
     background-color:#292929;
