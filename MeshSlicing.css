@@ -21,6 +21,26 @@ a:link
             padding-left: 15%;
     padding-right: 15%;
 }
+.PXGButtons
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid floralwhite;
+    min-width: 85px;
+    max-width: 90px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color:floralwhite;
+    background-color: black;
+    font-family: 'Poppin',sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.PXGButtonSpacing
+{
+        padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 .Front
 {
