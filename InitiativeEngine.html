@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title id = "title">PXG3D</title>
+    <link rel="stylesheet" href="PXG3D.css" />
+    
+    
+    </head>
+    <header class="Front">
+
+			<h1>Initiative Engine [WIP]</h1>
+            
+            
+
+	</header>
+    <body class = "bodyClass">
+        <header class="Contents">
+            <div class = "PXGButtonSpacing">
+            <a  href="index.html">
+                <div class = "BackButton">
+                        Go Back
+                </div>
+            </a>
+            </div>
+            <iframe width="480" height="270"
+                    src="https://www.youtube.com/embed/UfMkrJACSnU">
+            </iframe>
+            <div class = "PXGButtonSpacing">
+                <a  href="https://github.com/Developer-The-Great/InitiativeEngine">
+                    <div class = "PXGButtons">
+                        <div>Github</div>
+                    </div>
+                </a>
+            </div>
+            <p>This game engine was made as a a way for me to understand 3 topics that I am not familiar of. These topics are (1) How Entity Component Systems work under the hood, (2) How to use the Vulkan API in order to render 3D graphics in real-time, and (3) to understand how games implement multi-threading through job systems. </p>
+            <br>
+            
+            <p> This project is still a work in progress. At the moment of writing, only the first and second topic have been explored.  </p>
+            <br>
+            <p> Some of the notable features of this project are described below: </p>
+            
+            <h3 class = "Subtitle"> 1. Archetype ECS Implementation</h3>
+         
+            <p>There are a number of approaches to Entity Component Systems. In my case, I decided to choose the Archetype ECS approach. </p>
+            <br>
+            <p> This approach was chosen because of the performance potential it offers since it enables components to be stored in contiguous data structures (such as std::vector) which then enables a programmer to access data in a way that reduces cache misses. </p>
+            <br>
+            <p>The archetype ECS approach is also much easier to multithread later on due to the fact that entities with the same components are grouped together into one archetype. This means that one thread can execute functionA on one archetype and another thread can execute that same function on another archetype. Because of the way that archetype store components, i.e in seperate contiguous arrays, we can also by default avoid problems of false sharing.</p>
+            <br>
+            <p>The following are code snippets that represent the API created to use the ECS System:</p>
+            <br>
+            <h4 class = "SubSubtitle"> 1.1 Adding components</h4>
+            <br>
+            <img id="frameImage" src="img/AddComponent.png" alt="Test Image " style="width:800px;height:250px;">
+            <br>
+            <p>In order to make the API easy to use, I decided to opt for the GameObject-Component Style where components can be added through a function call to the Entity in question.</p>
+            <br>
+            <h4 class = "SubSubtitle"> 1.2 Accessing components</h4>
+            <br>
+            <p>Accessing components can be done by first creating a query and initializing it using a (variadic) templated function. </p>
+            <br>
+            <img id="frameImage" src="img/GetQuery.png" alt="Test Image " style="width:500px;height:40px;">
+            <br>
+            <p>This query can then be accessed through an iterator which contains the archetypes which then contain the entities that 
+have the queried components.</p>
+            <br>
+            <p>(1) Iterating through the query to get the archetypes with the queried components</p>
+            <br>
+            <p>(2) The archetype can be accessed to get a specific component array</p>
+            <br>
+            <p>(3) The component can then be individually accessed through this component array.</p>
+               <br>
+            <img id="frameImage" src="img/ECSUsage.png" alt="Test Image " style="width:800px;height:500px;">
+            <br>
+            
+            
+            <h3 class = "Subtitle"> 2. The Event System </h3>
+            
+            <p>The event system is based on the observer pattern. This event system can be used for communication between engine modules and/or communication between entities.</p>
+            <br>
+            <p> My implementation involves a templated Observer and a non templated Subject. The idea here is that a certain subject can raise any event through a templated function and only observers with that specific templated function will receive that event.</p>
+            <br>
+            <p> An example use is given below, where the event system is used to get input events from the window.</p>
+            <br>
+            <img id="frameImage" src="img/RaiseEvent.png" alt="Test Image " style="width:700px;height:200px;">
+            <br>
+            <img id="frameImage" src="img/SetEventFunc.png" alt="Test Image " style="width:450px;height:300px;">
+        </header>
+    
+    </body>
+    
+    
+
+</html>

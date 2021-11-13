@@ -16,7 +16,7 @@
         <header class="Contents">
             
             <div class = "PXGButtonSpacing">
-            <a  href="../Developer-The-Great.github.io/index.html">
+            <a  href="index.html">
                 <div class = "BackButton">
                         Go Back
                 </div>
@@ -24,25 +24,19 @@
             </div>
             
             <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/uipwkce2W1s">
+                    src="https://www.youtube.com/embed/REl-tkPl__M">
             </iframe>
             <div class = "PXGButtonSpacing">
-                <a  href="https://github.com/Developer-The-Great/PXG3D">
+                <a  href="https://github.com/Rythe-Interactive/Legion-Engine">
                     <div class = "PXGButtons">
                         <div>Github</div>
                     </div>
                 </a>
             </div>
             
-            <p>In order to increase my familiarity with game physics, I decided to create a custom 3D physics engine. Here are the following features:</p>
+            <p>In order to increase my familiarity with game physics. I decided to create a custom 3D physics engine. This physics engine was implemented in an existing game engine called the Legion Engine. The following is a description of the notable features I implemented:</p>
             
-            <h3 class = "Subtitle"> 1. Collision Detection Broadphase:</h3>
-            
-            <p>In order to be able to insert a larger amount of physics bodies, i needed a broadphase. At the time of doing this part of the engine, I was relatively new to game physics and implementing a GPU broadphase was out of scope. Because of this, I decided to look through the classic CPU sturctures. </p>
-            
-            <p>I realized that each possible broadphase has different use cases and since I did not know what my use case is and all I needed was something that could accelerate my physics engine. In this context, the choice was quite arbitrary. In the end, an octree was used. </p>
-            
-            <h3 class = "Subtitle"> 2. Collision Detection Middlephase and Narrowphase: </h3>
+            <h3 class = "Subtitle"> 1. Collision Detection Middlephase and Narrowphase: </h3>
             
             <p> After doing research on known collision detection techniques, I was presented with the choice of using either the Gilbert-Johnson-Keerthi or the Seperating Axis Test. The main reason why I ended up choosing SAT is because of sources mentioning it to be more portable to the GPU. Although I did not intend on integrating compute shaders, I wanted to leave the potential to do so open.</p>
             <br>
@@ -51,24 +45,15 @@
             <br>
             <p> In order to get the contact points of the collision, the Sutherland-Hodgman Mesh Clipping algorithm was used. In my implementation of this algorithm, in order to create numerically robust contacts, the clipping planes are considered to be 'thick' this means that there are cases where the edge being clipped is considered to be on the clipping plane. In this case, the edge is not clipped. </p>
             
-            <h3 class = "Subtitle"> 3. Collision Resolution </h3>
+            <h3 class = "Subtitle"> 2. Collision Resolution </h3>
             
-            <p> For collision resolution, I decided that I would implement sequential impulses with feature-id warm starting. The reason behind choosing this solver is mostly due to the availability of resources for implementation and explanation of this particular collision solver. Another reason is due to the possibility of extending sequential impulses to solve the large mass ratio. In order to test
-            my implementation of sequential impulses with warm starting, I compared it with 2 physics engines: A previous custom physics engine I worked on (where I only used position based warm starting), and the PGS solver implemented in PhysX 3.4.
-            As seen in the video below, the physics engine is able to generate comparable stability when compared with PhysX 3.4. The parameters use to do this comparison are mentioned in the description of the video: </p>
-            <br>
+            <p> For collision resolution, I decided that I would implement sequential impulses with feature-id warm starting. The reason behind choosing this solver is mostly due to the availability of resources for implementation and explanation of this particular collision solver. Another reason is due to the possibility of extending sequential impulses solver to solve the large mass ratio using the featherstone algorithm. </p>
+             <br>
+            <p>As shown in the video, the physics engine is able to reach comparable stability with unity's implementation of PhysX3.4. In order to ensure the correctness of the test, the parameters of both physics engines are matched as close as possible. This includes parameters such as the number of solver iterations, the contact offset, the mass of the objects, etc.
             
-            <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/Y_TbNf3DF3M">
-            </iframe>
+            <h3 class = "Subtitle"> 3. Convex Hull Generation </h3>
             
-            <br>
-            <p> At the moment of writing, the Diviner Physics Engine, is still in heavy development and a broadphase has not been made for it. 
-                This means that only very small amount of bodies can be used</p>
-            <br>
-            <iframe width="480" height="270"
-                    src="https://www.youtube.com/embed/N_LxqeFGVE0">
-            </iframe>
+            <p> In order to support collision detection for complex geometry I decided to implement the quickhull algorithm. As seen in the video the implementation was able to robustly handle meshes with varying shapes and complexity.
 
         
     </header>
