@@ -89,6 +89,7 @@ a.Subtitle:hover
 .Front
 {
     background-image: url(img/front.png) ;
+    background-color: black;
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
