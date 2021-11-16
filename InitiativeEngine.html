@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title id = "title">PXG3D</title>
+    <title id = "title">Initiative Engine</title>
     <link rel="stylesheet" href="PXG3D.css" />
     
     
@@ -32,7 +32,7 @@
                     </div>
                 </a>
             </div>
-            <p>This game engine was made as a a way for me to understand 3 topics that I am not familiar of. These topics are (1) How Entity Component Systems work under the hood, (2) How to use the Vulkan API in order to render 3D graphics in real-time, and (3) to understand how games implement multi-threading through job systems. </p>
+            <p>This game engine was made as a way for me to understand 3 topics that I am not familiar of. These topics are (1) How Entity Component Systems work under the hood, (2) How to use the Vulkan API in order to render 3D graphics in real-time, and (3) to understand how games implement multi-threading through job systems. </p>
             <br>
             
             <p> This project is still a work in progress. At the moment of writing, only the first and second topic have been explored.  </p>
@@ -45,7 +45,7 @@
             <br>
             <p> This approach was chosen because of the performance potential it offers since it enables components to be stored in contiguous data structures (such as std::vector) which then enables a programmer to access data in a way that reduces cache misses. </p>
             <br>
-            <p>The archetype ECS approach is also much easier to multithread later on due to the fact that entities with the same components are grouped together into one archetype. This means that one thread can execute functionA on one archetype and another thread can execute that same function on another archetype. Because of the way that archetype store components, i.e in seperate contiguous arrays, we can also by default avoid problems of false sharing.</p>
+            <p>The archetype ECS approach is also much easier to multithread later on due to the fact that entities with the same components are grouped together into one archetype. This means that one thread can execute functionA on one archetype and another thread can execute that same function on another archetype. Because of the way that archetype store components, i.e in separate contiguous arrays, we can also by default avoid problems of false sharing.</p>
             <br>
             <p>The following are code snippets that represent the API created to use the ECS System:</p>
             <br>

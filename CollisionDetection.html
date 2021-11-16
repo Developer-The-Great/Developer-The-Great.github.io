@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title id = "title">Collision Detection </title>
+    <title id = "title">Diviner Physics Engine </title>
     <link rel="stylesheet" href="CollisionDetection.css" />
     
     
@@ -41,7 +41,7 @@
             <p> After doing research on known collision detection techniques, I was presented with the choice of using either the Gilbert-Johnson-Keerthi or the Seperating Axis Test. The main reason why I ended up choosing SAT is because of sources mentioning it to be more portable to the GPU. Although I did not intend on integrating compute shaders, I wanted to leave the potential to do so open.</p>
             <br>
             <p> Another reason why I chose to use the SAT is because I was made aware of a GDC talk titled  “Physics for Game Programmers:The Separating Axis Test between Convex Polyhedra”. It talks about 
-            how edge checks for the seperating axis test can be optimizied by checking if it creates a valid seperating axis. We are able to tell its valid if the combination of the 2 edges create a minkowski face. An edge check between 2 cube colliders with 24 edges using the brute force method takes on average 0.350 ms. The optimized version only takes 0.058ms on average. The test was done using an Intel Core i7-7700 HQ.</p>
+            how edge checks for the separating axis test can be optimized by checking if it creates a valid separating axis. We are able to tell its valid if the combination of the 2 edges create a minkowski face. An edge check between 2 cube colliders with 24 edges using the brute force method takes on average 0.350 ms. The optimized version only takes 0.058ms on average. The test was done using an Intel Core i7-7700 HQ.</p>
             <br>
             <p> In order to get the contact points of the collision, the Sutherland-Hodgman Mesh Clipping algorithm was used. In my implementation of this algorithm, in order to create numerically robust contacts, the clipping planes are considered to be 'thick' this means that there are cases where the edge being clipped is considered to be on the clipping plane. In this case, the edge is not clipped. </p>
             
